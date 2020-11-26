@@ -14,8 +14,6 @@
   font-weight: thin;
 }
 
-
-
 * {
   box-sizing: border-box;
   direction: rtl;
@@ -23,7 +21,7 @@
 
 body {
   font-family: 'Shabnam';
-  width: 100%;
+  width: 98%;
   height: 100vh;
   background-color: #E8EFF7;
   display: flex;
@@ -34,7 +32,8 @@ body {
 .form {
   background-color: white;
   max-width: 1000px;
-  width: 400px;
+  min-width: 350px;
+  width: 30%;
 }
 
 .tabbar {
@@ -110,6 +109,12 @@ input[type="error"] {
   border: none;
   border-right: 10px solid #D1E4F3;
 }
+
+picture {
+  height: 400px;
+}
+
+
 
 header {
   display: flex !important;
