@@ -1,6 +1,20 @@
-#navbar {
-    background-color:    #e6f3ff;
+.stackable img {
+    margin: auto !important;
+}
+
+.footer , .navbar {
     height: 60px;
+}
+#footer_light , #navbar_light {
+    background-color:    #e6f3ff;
+}
+
+.footer {
+    border-top: 2px solid rgba(34,36,38,.15) !important;
+}
+
+#navbar_dark {
+    background-color: #004f99;
 }
 
 /* #navbar .item {
@@ -21,22 +35,30 @@
     margin-left: 250px;
 }
 
-* {
+/* * {
     font-family: "sahel" !important;
-}
+} */
 
 /* .signin {
     background-color: #007acc !important;
 } */
 
-body {
-    font-family: "sahel" !important;
+
+.image{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block;
 }
 
-img {
-    width: 100px !important;
-    height: 40px;
-}
+.image:hover{
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    box-shadow: 10px 10px 5px #888888;
+  }
+
 
 .ui .sidebar {
     overflow: visible !important;
@@ -44,6 +66,7 @@ img {
 
 #content {
     margin-top: 60px !important;
+    margin-bottom: 60px !important;
     margin-right: 300px !important;
 }
 
@@ -63,13 +86,69 @@ img {
     border-width: 5px !important;
 }
 
-img {
-    margin: auto;
-    width: 150;
-    height: 150;
+#right_menu {
+    margin-right: 0px !important;
 }
 
-ul {list-style: none !important;}
+#logo‌ {
+    height: 30px !important;
+    width: 80px !important;
+}
+
+.bottom.menu .item {
+    width: 25%;
+    text-align: center;
+    /* margin-left: 3% !important;
+    margin-right: 3% !important; */
+}
+
+.bottom.menu .item a {
+    margin: auto    ;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile.hidden {
+        display: none !important;
+    }
+    .ui.menu.visible {
+        display: none !important;
+    }
+
+    #content {
+        margin-right: 0 !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer, #awesome {
+        display: none !important;
+    }
+}
+
+/* .menu .right {
+    margin-right: 0 !important;
+} */
+
+/* img {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 150;
+    height: 150;
+
+} */
+
+ /* .square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; 
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover
+}  */
+
+/* ul {list-style: none !important;} */
 /* li::before {
     content: "•";
     color: #fff;

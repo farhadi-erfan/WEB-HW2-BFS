@@ -2,6 +2,8 @@
 <html lang="fa" dir="rtl">
 
 <head>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+    type='text/css'>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,30 +20,56 @@
   <!-- Semantic rtl -->
   <link rel="stylesheet" href="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.rtl.min.css"
     integrity="sha384-yXUIpeQfH3cuk6u6Mwu8uyJXB2R3UOLvcha1343UCMA2TA7lQ14BFmrudI6LAP8A" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css">
+
   <style>
+    #awesome {
+      font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+    }
   </style>
 
   <title>Home</title>
 </head>
 
 <body>
-  <div class="ui top fixed secondary pointing menu borderless" id="navbar">
-    <div class="menu right">
-      <div class="ui item" style="margin-right: -595px;">
-        <img src="files/blue_logo_200x200.png" alt="logo">
+  <div class="ui top fixed secondary pointing menu borderless navbar" id="navbar_light">
+    <div class="menu right" id="right_menu">
+      <div class="ui item">
+        <img src="files/blue_logo_200x200.png" alt="logo" id="logo"
+          style="height: 30px !important; width: 80px !important;">
       </div>
-      <div class="item active" style="margin-right: 149px;">
+      <div class="item active mobile hidden" style="margin-right: 188px;">
         <a href="#">خانه</a>
       </div>
-      <div class="item">
+      <div class="item mobile hidden">
         <a href="#">داده‌ها</a>
       </div>
     </div>
-    <div class="item">
+    <div class="item mobile hidden">
       <div class="ui primary basic button">ورود</div>
     </div>
-    <div class="item">
+    <div class="item mobile hidden">
       <div class="tiny ui primary button">ثبت نام</div>
+    </div>
+    <a class="item" id="awesome">
+      <i class="sidebar icon"></i>
+    </a>
+  </div>
+  <div class="ui bottom fixed secondary pointing menu borderless footer" id="footer_light">
+    <div class="item active">
+      <a href="#">خانه</a>
+    </div>
+    <div class="item">
+      <a href="#">داده‌ها</a>
+    </div>
+    <div class="item">
+      <a href="#">ورود</a>
+    </div>
+    <div class="item">
+      <a href="#">ثبت نام</a>
     </div>
   </div>
 
@@ -59,7 +87,7 @@
       تنظیمات
     </h3>
     <div class="ui toggle checkbox" style="direction: ltr;">
-      <input type="checkbox" name="public">
+      <input type="checkbox" name="dark_mode">
       <label style="color: #fff;">حالت شب</label>
     </div>
   </div>
@@ -67,61 +95,58 @@
     <h1>سلام</h1>
   </div> -->
   <div class="pusher" id="content">
-    <div class="ui grid container">
-      <div class="four column row">
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light"> 
+    <div class="ui grid container" style="margin: 80px">
+      <div class="ui grid container stackable">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-      </div>
-      <div class="four column row">
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light"> 
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-      </div>
-      <div class="four column row">
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light"> 
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-      </div>
-      <div class="four column row">
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light"> 
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
-        <div class="column">
-          <img class="ui medium image" src="files/signup-lowQ-dark.jpg" alt="light">
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
+        </div>
+        <div class="five wide tablet four wide computer column">
+          <img class="ui medium image" src="files/dhruv-N9UuFddi7hs-unsplash.jpg" alt="light">
         </div>
       </div>
     </div>
@@ -132,6 +157,7 @@
   <script src="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.min.js"
     integrity="sha384-6urqf2sgCGDfIXcoxTUOVIoQV+jFr/Zuc4O2wCRS6Rnd8w0OJ17C4Oo3PuXu8ZtF"
     crossorigin="anonymous"></script>
+  <script src="home.js"></script>
 </body>
 
 </html>
