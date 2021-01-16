@@ -1,0 +1,168 @@
+#navbar {
+    background-color:    #e6f3ff;
+    height: 60px;
+    justify-content: flex-start;
+    /* padding-right: 300px; */
+}
+
+#navbar .logo {
+    margin: auto 10px;
+}
+
+#navbar .item {
+    /* margin: auto 0; */
+    height: 100%;
+}
+
+.menu {
+    position: absolute;
+    right: 300px;
+    bottom: 0;
+    top: 0;
+}
+
+#sidebar {
+    margin-top: 60px !important;
+    width: 300px;
+    background-color: #2185D0;
+}
+
+#sidebar .item {
+    color: #fff !important;
+}
+
+#home {
+    margin-left: 250px;
+}
+
+* {
+    font-family: "sahel" !important;
+}
+
+/* .signin {
+    background-color: #007acc !important;
+} */
+
+body {
+    font-family: "sahel" !important;
+}
+
+img {
+    width: 100px !important;
+    height: 40px;
+}
+
+.ui .sidebar {
+    overflow: visible !important;
+}
+
+#content {
+    margin-top: 60px !important;
+    margin-right: 300px !important;
+}
+
+.ui .list li {
+    margin-right: 50px;
+    line-height: 1.5rem !important;
+    color: #fff;
+}
+
+#sidebar h3 {
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.active {
+    border-color: #2185D0 !important; 
+    border-width: 5px !important;
+}
+
+img {
+    margin: auto;
+    width: 150;
+    height: 150;
+}
+
+ul {list-style: none !important;}
+/* li::before {
+    content: "•";
+    color: #fff;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em
+} */
+
+/* li::marker {
+   color: #fff !important;
+   content: "•";
+}  */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 !important;
+}
+
+.container.hide {
+    display: none;
+}
+
+img.item {
+    box-sizing: border-box;
+    width: 148px !important;
+    margin: 10px;
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    margin: 50px;
+    border-collapse: collapse;
+}
+
+tr {
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #a6c0d4;
+    font-weight: normal;
+}
+
+tr:nth-child(odd) {
+    background-color: #85afcf;
+}
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(1) {
+    background-color: #2185D0;
+    color: white;
+    font-weight: bold;
+}
+
+.bottom-buttons {
+    display: flex;
+    width: 100%;
+    padding: 0 50px;
+}
+/* 
+@media screen and (max-width: 1000px) {
+    #navbar {
+        position: fixed !important;
+        top: calc(100% - 60px);
+    }
+    #sidebar {
+        display: none !important;
+    }
+} */
+
+.dark {
+    background-color: #222324 !important;
+}
