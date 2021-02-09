@@ -14,54 +14,78 @@
 
   <!-- Costum CSS -->
   <link rel="stylesheet" href="home.css">
+  
 
   <!-- Semantic rtl -->
   <link rel="stylesheet" href="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.rtl.min.css"
     integrity="sha384-yXUIpeQfH3cuk6u6Mwu8uyJXB2R3UOLvcha1343UCMA2TA7lQ14BFmrudI6LAP8A" crossorigin="anonymous">
-  <style>
-  </style>
+  
+  <!--fav icon-->
+  <link rel="shortcut icon" type="image/jpg" href="BFS.png">
 
-  <title>Home</title>
+  <!-- JS Code -->
+  <script src="index.js"></script>
+
+  <!-- Semantic scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+  <script src="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha384-6urqf2sgCGDfIXcoxTUOVIoQV+jFr/Zuc4O2wCRS6Rnd8w0OJ17C4Oo3PuXu8ZtF"
+    crossorigin="anonymous"></script>
+
+  <title>WEB DEV - 2</title>
 </head>
 
-<body>
+<body id="body">
   <div class="ui top fixed secondary pointing menu borderless" id="navbar">
     <img src="assets/blue_logo_200x200.png" alt="logo" class="logo">
-    <div class="menu" style="justify-content: flex-start;">
-      <div class="item active" onclick="toHome()" id="nav-home"><a>خانه</a></div>
-      <div class="item" onclick="toData()" id='nav-data'><a>داده‌ها</a></div>
+    <div class="my-menu menu" id="main-menu">
+      <div class="item active" onclick="toHome()" id="nav-home"><label class="unselectable">خانه</label></div>
+      <div class="item" onclick="toData()" id='nav-data'><label class="unselectable">داده‌ها</label></div>
     </div>
-    <div class="item" style="margin-right: auto;">
+    <div class="item" id="signup">
       <div class="ui primary basic button"><a href="./signupin.html">ورود</a></div>
     </div>
-    <div class="item">
+    <div class="item"  id="login">
       <div class="tiny ui primary button"><a href="./signupin.html" style="color: white">ثبت نام</a></div>
+    </div>
+    <div class="left aligned menu">
+      <div class="item" id="nav-button">
+          <span onclick="openNav()" id="nav-open" style="color: #2185D0;">&#9776;</span>
+          <span class="hide" onclick="closeNav()" id="nav-close"style="color: #2185D0;">X</span>
+      </div>
     </div>
   </div>
 
-  <div class="ui vertical menu sidebar visible borderless" id="sidebar">
+  <div class="ui bottom fixed secondary pointing menu borderless hide" id="bottombar">
+    <div class="my-menu menu" id="main-menu2">
+      <div class="item active" onclick="toHomeMobile()" id="nav-mobile-home"><label class="unselectable">خانه</label></div>
+      <div class="item" onclick="toDataMobile()" id='nav-mobile-data'><label class="unselectable">داده‌ها</label></div>
+      <div class="item" id='nav-mobile-login'><a class="unselectable" href="./signupin.html">ورود</label></div>
+      <div class="item" id='nav-mobile-signup'><a class="unselectable" href="./signupin.html">ثبت‌نام</label></div>
+    </div>
+  </div>
+
+  <div class="ui left sidebar visible borderless" id="sidebar">
     <h3 class="item" style="font-weight: bold;">
       اعضای تیم
     </h3>
-    <ul class="ui list" style="list-style-type: none !important">
+    <ul class="ui list" >
       <li>بهراد ذبیحی</li>
       <li>عرفان فرهادی</li>
       <li>سپهر زمانی</li>
     </ul>
 
-    <h3 class="item" style="font-weight: bold; margin-bottom: 0;">
+    <h3 class="item">
       تنظیمات
     </h3>
     <div class="ui toggle checkbox" style="direction: ltr;">
       <input type="checkbox" name="public" onclick="changeTheme()">
-      <label style="color: #fff;">حالت شب</label>
+      <label style="color: #fff;" id="themelabel">حالت شب</label>
     </div>
   </div>
-  <!-- <div class="ui container" id="content">
-    <h1>سلام</h1>
-  </div> -->
-  <div class="pusher" id="content">
-    <div class="ui grid container">
+  <div id="content">
+    <div class="container">
       <div class="container" id="home">
         <img class="ui medium image item" src="assets/photo.png" alt="light">
         <img class="ui medium image item" src="assets/photo.png" alt="light">
@@ -78,36 +102,46 @@
       </div>
       <div class="container hide" id="data">
         <table>
-          <tr>
-            <th>رتبه</th>
-            <th>نام تیم</th>
-            <th>دانشگاه و کشور</th>
-            <th>امتیاز</th>
-          </tr>
-          <tr>
-            <th>یکم</th>
-            <th>شلغم</th>
-            <th>این‌جا</th>
-            <th>۱۲۰</th>
-          </tr>
-          <tr>
-            <th>دوم</th>
-            <th>کوزه‌گر</th>
-            <th>اون‌جا</th>
-            <th>۹۰</th>
-          </tr>
-          <tr>
-            <th>سوم</th>
-            <th>کوزه شکسته</th>
-            <th>هرجا</th>
-            <th>۷۵</th>
-          </tr>
-          <tr>
-            <th>چهارم</th>
-            <th>نوش‌آب</th>
-            <th>هیچ‌جا</th>
-            <th>۲۰</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>رتبه</th>
+              <th>نام تیم</th>
+              <th>دانشگاه و کشور</th>
+              <th>امتیاز</th>
+            </tr>
+          </thead>
+          <colgroup>
+            <col span="1">
+            <col span="1">
+            <col span="1">
+            <col span="1">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td data-th="رتبه">یکم</td>
+              <td data-th="نام تیم">شلغم</td>
+              <td data-th="دانشگاه و کشور">این‌جا</td>
+              <td data-th="امتیاز">۱۲۰</td>
+            </tr>
+            <tr>
+              <td data-th="رتبه">دوم</td>
+              <td data-th="نام تیم">کوزه‌گر</td>
+              <td data-th="دانشگاه و کشور">اون‌جا</td>
+              <td data-th="امتیاز">۹۰</td>
+            </tr>
+            <tr>
+              <td data-th="رتبه">سوم</td>
+              <td data-th="نام تیم">کوزه شکسته</td>
+              <td data-th="دانشگاه و کشور">هرجا</td>
+              <td data-th="امتیاز">۷۵</td>
+            </tr>
+            <tr>
+              <td data-th="رتبه">چهارم</td>
+              <td data-th="نام تیم">نوش‌آب</td>
+              <td data-th="دانشگاه و کشور">هیچ‌جا</td>
+              <td data-th="امتیاز">۲۰</td>
+            </tr>
+          </tbody>
         </table>
         <div class="bottom-buttons">
           <div class="item">
@@ -120,41 +154,7 @@
       </div>
     </div>
   </div>
-  <!-- Semantic scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
-  <script src="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.min.js"
-    integrity="sha384-6urqf2sgCGDfIXcoxTUOVIoQV+jFr/Zuc4O2wCRS6Rnd8w0OJ17C4Oo3PuXu8ZtF"
-    crossorigin="anonymous"></script>
-    <script>
-      function changeTheme() {
-        nav = document.getElementById('navbar');
-        side = document.getElementById('sidebar');
-        main = document.getElementsByClassName('container')[0];
-        if(nav.classList.contains('dark')) {
-          nav.classList.remove('dark');
-          side.classList.remove('dark');
-          main.style.backgroundColor = 'white';
-        }
-        else {
-          nav.classList.add('dark');
-          side.classList.add('dark');
-          main.style.backgroundColor = '#292A2C'
-        }
-      }
-      function toHome() {
-        document.getElementById('nav-home').classList.add('active');
-        document.getElementById('nav-data').classList.remove('active');
-        document.getElementById('home').classList.remove('hide');
-        document.getElementById('data').classList.add('hide');
-      }
-      function toData() {
-        document.getElementById('nav-data').classList.add('active');
-        document.getElementById('nav-home').classList.remove('active');
-        document.getElementById('data').classList.remove('hide');
-        document.getElementById('home').classList.add('hide');
-      }
-    </script>
+
 </body>
 
 </html>
