@@ -1,3 +1,6 @@
+* {
+    /* transition: all 0.3s;   */
+}
 #navbar {
     background-color:    #e6f3ff;
     height: 60px;
@@ -208,38 +211,57 @@ img.item:hover {
         display: none;
     }
 
+    table {
+        border-collapse: separate !important; 
+        border-spacing: 1rem;
+    }
+
     table thead {
         display: none;
-      }
+    }
+
+    table tr {
+        background-color: #E8EFF7;
+        direction: rtl;
+        color: #6F9FC7;
+        margin: 1rem 0;
+        border-radius: 4px;
+    }
     
-      table td {
-        display: block;
-        position: relative;
-        padding-left: 50%;
-        padding-top: 13px;
-        padding-bottom: 13px;
-        text-align: center;
-        background: #e9e9e9;
-      }
-    
-      table td::before {
-        content: attr(data-th) ": ";
-        display: inline-block;
-        color: #000000;
-        background: #e9e9e9;
-        border-right: 2px solid transparent;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 33%;
-        max-height: 100%;
-        font-family: "sahel" !important;
-        font-size: 16px;
-        font-weight: 300;
-        padding-left: 13px;
-        padding-top: 13px;
-      }
+    table td {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    /* direction: rtl; */
+    position: relative;
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: center;
+    border: none;
+    /* background: #e9e9e9; */
+    }
+
+    table td::after {
+    content: attr(data-th) ": ";
+    display: inline-block;
+    color: #000000;
+    /* background: #e9e9e9; */
+    border-right: 2px solid transparent;
+    /* position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0; */
+    /* float: right; */
+    width: 50%;
+    max-height: 100%;
+    /* font-family: "sahel" !important; */
+    font-size: 16px;
+    font-weight: 300;
+    /* padding-left: 13px;
+    padding-top: 13px; */
+    }
 }
 
 
@@ -267,11 +289,14 @@ th {
     font-weight: normal;
 }
 
+@media screen and (min-width: 601px) {
+
 tbody tr:nth-child(even) {
     background-color: #85afcf;
 }
 tbody tr:nth-child(odd) {
     background-color: white;
+}
 }
 
 td {
@@ -286,9 +311,9 @@ thead tr {
 
 .bottom-buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
-    padding: 50px;
+    padding: 65px;
 }
 
 
@@ -303,4 +328,10 @@ thead tr {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#main-menu2 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
