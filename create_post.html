@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Import Semantic ui -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <!-- Sahel Font -->
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css' rel='stylesheet' type='text/css'>
+
+    <!-- Costum CSS -->
+    <link rel="stylesheet" href="home.css">
+
+
+    <!-- Semantic rtl -->
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.rtl.min.css"
+        integrity="sha384-yXUIpeQfH3cuk6u6Mwu8uyJXB2R3UOLvcha1343UCMA2TA7lQ14BFmrudI6LAP8A" crossorigin="anonymous">
+
+    <!--fav icon-->
+    <link rel="shortcut icon" type="image/jpg" href="BFS.png">
+
+    <!-- JS Code -->
+    <script src="index.js"></script>
+
+    <!-- Semantic scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdn.rtlcss.com/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha384-6urqf2sgCGDfIXcoxTUOVIoQV+jFr/Zuc4O2wCRS6Rnd8w0OJ17C4Oo3PuXu8ZtF"
+        crossorigin="anonymous"></script>
+    
+    <script>
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#post_image')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
+
+    <title>WEB DEV - 2</title>
+
+    <style>
+        #respond {
+            margin-top: 40px;
+            width: 80%;
+        }
+
+        #respond input[type='text'],
+        #respond input[type='email'],
+        #respond textarea {
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -o-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            border-radius: 5px;
+
+            line-height: 1.4em;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="ui top fixed secondary pointing menu borderless" id="navbar">
+        <img src="assets/blue_logo_200x200.png" alt="logo" class="logo">
+        <div class="my-menu menu" id="main-menu">
+            <div class="item active" onclick="toHome()" id="nav-home"><label class="unselectable">خانه</label></div>
+            <div class="item" onclick="toData()" id='nav-data'><label class="unselectable">داده‌ها</label></div>
+        </div>
+        <div class="item" id="signup">
+            <div class="ui primary basic button"><a href="./signupin.html">ورود</a></div>
+        </div>
+        <div class="item" id="login">
+            <div class="tiny ui primary button"><a href="./signupin.html" style="color: white">ثبت نام</a></div>
+        </div>
+        <div class="left aligned menu">
+            <div class="item" id="nav-button">
+                <span onclick="openNav()" id="nav-open" style="color: #2185D0;">&#9776;</span>
+                <span class="hide" onclick="closeNav()" id="nav-close" style="color: #2185D0;">X</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui bottom fixed secondary pointing menu borderless hide" id="bottombar">
+        <div class="my-menu menu" id="main-menu2">
+            <div class="item active" onclick="toHomeMobile()" id="nav-mobile-home"><label
+                    class="unselectable">خانه</label></div>
+            <div class="item" onclick="toDataMobile()" id='nav-mobile-data'><label class="unselectable">داده‌ها</label>
+            </div>
+            <div class="item" id='nav-mobile-login'><a class="unselectable" href="./signupin.html">ورود</label></div>
+            <div class="item" id='nav-mobile-signup'><a class="unselectable" href="./signupin.html">ثبت‌نام</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui left sidebar visible borderless" id="sidebar">
+        <h3 class="item" style="font-weight: bold;">
+            اعضای تیم
+        </h3>
+        <ul class="ui list">
+            <li>بهراد ذبیحی</li>
+            <li>عرفان فرهادی</li>
+            <li>سپهر زمانی</li>
+        </ul>
+
+        <h3 class="item">
+            تنظیمات
+        </h3>
+        <div class="ui toggle checkbox" style="direction: ltr;">
+            <input type="checkbox" name="public" onclick="changeTheme()">
+            <label style="color: #fff;" id="themelabel">حالت شب</label>
+        </div>
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="container" id="home">
+                <div id="respond">
+
+                    <h3>Write a Post</h3>
+
+                    <form action="#" method="post" id="commentform">
+
+                        <label for="comment_author" class="required">Title</label>
+                        <input type="text" name="comment_author" id="comment_author" value="" tabindex="1"
+                            required="required">
+
+                        <label for="comment" class="required">Your message</label>
+                        <textarea name="comment" id="comment" rows="10" tabindex="4" required="required"></textarea>
+
+                        <input type="file" id="avatar" class="ui button" accept="image/png, image/jpeg" onchange="readURL(this);">
+                        
+
+                        <!-- comment_post_ID value hard-coded as 1 -->
+                        <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+                        <input name="submit" type="submit" value="Submit" class="ui primary button"/></form></br>
+                        <img id="post_image" src="#" alt="post image">
+                        
+                    </form>
+
+                </div>
+            </div>
+            <div class="container hide" id="data">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>رتبه</th>
+                            <th>نام تیم</th>
+                            <th>دانشگاه و کشور</th>
+                            <th>امتیاز</th>
+                        </tr>
+                    </thead>
+                    <colgroup>
+                        <col span="1">
+                        <col span="1">
+                        <col span="1">
+                        <col span="1">
+                    </colgroup>
+                    <tbody>
+                        <tr style="
+              border: 1px solid red;
+            ">
+                            <td data-th="رتبه">یکم</td>
+                            <td data-th="نام تیم">شلغم</td>
+                            <td data-th="دانشگاه و کشور">این‌جا</td>
+                            <td data-th="امتیاز">۱۲۰</td>
+                        </tr>
+                        <tr>
+                            <td data-th="رتبه">دوم</td>
+                            <td data-th="نام تیم">کوزه‌گر</td>
+                            <td data-th="دانشگاه و کشور">اون‌جا</td>
+                            <td data-th="امتیاز">۹۰</td>
+                        </tr>
+                        <tr>
+                            <td data-th="رتبه">سوم</td>
+                            <td data-th="نام تیم">کوزه شکسته</td>
+                            <td data-th="دانشگاه و کشور">هرجا</td>
+                            <td data-th="امتیاز">۷۵</td>
+                        </tr>
+                        <tr>
+                            <td data-th="رتبه">چهارم</td>
+                            <td data-th="نام تیم">نوش‌آب</td>
+                            <td data-th="دانشگاه و کشور">هیچ‌جا</td>
+                            <td data-th="امتیاز">۲۰</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bottom-buttons">
+                    <div class="item">
+                        <div class="ui primary basic button">قبلی</div>
+                    </div>
+                    <div class="item">
+                        <div class="ui primary basic button">بعدی</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
