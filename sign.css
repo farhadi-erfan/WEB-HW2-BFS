@@ -120,7 +120,7 @@ input[type="checkbox"] {
   width: 12px;
 }
 
-input[type="submit"] {
+input[type="button"] {
   background-color: #1D69A5;
   color: white;
 }
@@ -137,6 +137,8 @@ input[type="error"] {
   background-color: #E8EFF7;
   border: none;
   border-right: 10px solid #D1E4F3;
+  transition: opacity 100ms;
+  opacity: 0;
 }
 
 picture {

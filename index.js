@@ -83,12 +83,15 @@ function fadeIn(elemant, time) {
     }, time);
 }
 
-function fadeOut(elemant, time) {
+function fadeOut(elemant, time, do_none=true) {
     elemant.style.transition = "opacity " + time + "ms";
     elemant.style.opacity = "0";
     elemant.style.display = '';
-    setTimeout(() => {
-        elemant.style.display='none';
-    }, time);
-    
+    if (do_none) {
+        setTimeout(() => {
+            elemant.style.display='none';
+        }, time);
+    }
 }
+
+export {fadeIn, fadeOut}
